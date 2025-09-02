@@ -2,4 +2,4 @@
 ## Проект
 Этот репозиторий является каркасом для будущего веб-приложения.
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://zMC-17.github.io/YetAnotherRepository/)
+- [Публичная страница на GitHub Pages](https://zmc-17.github.io/YetAnotherRepository/)
