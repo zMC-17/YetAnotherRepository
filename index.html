@@ -18,14 +18,32 @@
 
 <body>
     <!-- Шапка сайта -->
-    <header>
-        <a href="/">ДЕНЕГ.NET</a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+    <header class="site-header">
+        <a class="site-header__brand" href="/">ДЕНЕГ.NET</a>
+        <button class="theme-toggle" type="button" aria-pressed="false">Тема</button>
+        <script defer>
+            const KEY = 'theme', btn = document.querySelector('.theme-toggle');
+            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+            // Автовыбор: системная тема или сохранённый выбор пользователя
+            if (localStorage.getItem(KEY) === 'dark' || (!localStorage.getItem(KEY) &&
+                prefersDark)) {
+                document.body.classList.add('theme-dark');
+                btn?.setAttribute('aria-pressed', 'true');
+            }
+            // Переключение по кнопке с сохранением в localStorage
+            btn?.addEventListener('click', () => {
+                const isDark = document.body.classList.toggle('theme-dark');
+                btn.setAttribute('aria-pressed', String(isDark));
+                localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+            });
+        </script>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta"
+                        href="contacts.html">Связаться</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -45,6 +63,8 @@
         <section id="portfolio">
             <h2>Портфолио</h2>
             <p>Вас беспокоит поддержка сбербанка, назовите три цифры сзади</p>
+            <img src="img/card-640.jpeg" alt="Проект" width="350" height="240"
+                loading="lazy" decoding="async">
         </section>
 
         <!-- Секция 3 с якорем -->

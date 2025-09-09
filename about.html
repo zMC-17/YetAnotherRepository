@@ -6,20 +6,19 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>О нас - сайт</title>
     <meta name="description" content="Узнайте больше о нашей компании и истории">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <a href="/">ДЕНЕГ.NET</a>
-        <!-- Главное меню навигации -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+    <header class="site-header">
+        <a class="site-header__brand" href="/">ДЕНЕГ.NET</a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="about.html">О нас</a></li>
+                <li class="site-nav__item"><a class="site-nav__link site-nav__link--cta" href="contacts.html">Связаться</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
         <!-- Простые "хлебные крошки" -->
         <nav aria-label="Хлебные крошки">
